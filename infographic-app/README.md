@@ -6,10 +6,10 @@ Also the app uses [@cognite/react-auth](https://github.com/cognitedata/react-aut
 
 ## Quick Start
 
-In the project directory install npm modules:
+Install npm modules:
 
-### `yarn`
+`yarn` or `npm install`
 
 Start application:
 
-### `yarn start`
+`yarn start` or `npm start`
