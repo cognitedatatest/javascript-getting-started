@@ -4,13 +4,23 @@ import { TenantSelector } from "@cognite/gearbox";
 import Layout from "./Layout";
 
 class App extends Component {
-  state = {
-    tenant: null
-  };
+  constructor() {
+    super();
+    const route = window.location.pathname.replace("/", "");
+    this.state = {
+      tenant: route || null
+    };
+  }
+
+  componentDidMount() {
+    window.onpopstate = event => {
+      this.setState({ tenant: (event.state && event.state.tenant) || null });
+    };
+  }
 
   onTenantSelected = tenant => {
-    console.log("tenant", tenant);
     this.setState({ tenant });
+    window.history.pushState({ tenant }, "", `/${tenant}`);
   };
 
   render() {
@@ -27,7 +37,7 @@ class App extends Component {
           </ReactAuthProvider>
         ) : (
           <TenantSelector
-            title="Info App"
+            title="Infographic App"
             initialTenant="publicdata"
             onTenantSelected={this.onTenantSelected}
           />
