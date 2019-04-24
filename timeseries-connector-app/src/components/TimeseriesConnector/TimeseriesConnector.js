@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import { TenantSelector } from "@cognite/gearbox";
 import { ReactAuthProvider } from "@cognite/react-auth";
-import TimeseriesContainer from '../../containers/TimeseriesContainer/TimeseriesContainer'
-import styled from 'styled-components';
-import 'antd/dist/antd.css';
+import TimeseriesContainer from "../../containers/TimeseriesContainer/TimeseriesContainer";
+import styled from "styled-components";
+import "antd/dist/antd.css";
 
 const PageContainer = styled.div`
   width: 100vw;
@@ -27,10 +27,9 @@ class TimeseriesConnector extends React.Component {
     this.setState({
       tenant
     });
-  }
+  };
 
   render() {
-
     return (
       <PageContainer>
         {this.state.tenant ? (
@@ -43,14 +42,14 @@ class TimeseriesConnector extends React.Component {
             <TimeseriesContainer />
           </ReactAuthProvider>
         ) : (
-            <TenantSelectorContainer>
-              <TenantSelector
-                onTenantSelected={this.handleTenantSelect}
-                initialTenant='itera-dev'
-                title='TimeseriesConnector'
-              />
-            </TenantSelectorContainer>
-          )}
+          <TenantSelectorContainer>
+            <TenantSelector
+              onTenantSelected={this.handleTenantSelect}
+              initialTenant="itera-dev"
+              title="TimeseriesConnector"
+            />
+          </TenantSelectorContainer>
+        )}
       </PageContainer>
     );
   }
