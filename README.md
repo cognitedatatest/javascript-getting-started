@@ -6,4 +6,4 @@ This repository contains several examples of using [@cognite/gearbox](https://gi
 | ---------------------------------- | ---------------------------------------------------- |
 | [Infographic App][infographic-app] | `SensorOverlay`, `TimeserieSearch`, `TenantSelector` |
 
-[infographic-app]: https://github.com/cognitedata/javascript-getting-started/tree/infographic_app/infographic-app
+[infographic-app]: https://github.com/cognitedata/javascript-getting-started/tree/master/infographic-app
