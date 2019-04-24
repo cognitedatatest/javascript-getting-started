@@ -860,10 +860,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@cognite/gearbox@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@cognite/gearbox/-/gearbox-0.0.10.tgz#4458d44107bd5b55a1c45b1861064f8b1623ff9b"
-  integrity sha512-VoVHndw6aWZv8Gd18XUZ/jzyygNNSgBNZbY+d8LAavddGg1xhhb8GbB8gsgRYlXkgU0jvMH3FUMO6NlVKUf4Gg==
+"@cognite/gearbox@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@cognite/gearbox/-/gearbox-0.0.13.tgz#81d2c0fbfe2d261689a321484dc819b10aedb41d"
+  integrity sha512-xXfE3+/R5y7vU9cTzmw9lHQO3yXmW3Jbjdykq3ZnRfcoB8Pij0/AXIIr9WcU6JlRBgSerapUDCRoFN5Iix6w6A==
   dependencies:
     d3 "^5.9.2"
     lodash "^4.17.11"

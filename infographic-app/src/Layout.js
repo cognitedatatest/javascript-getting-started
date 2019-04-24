@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TimeseriesSearchAndSelect, SensorOverlay } from "@cognite/gearbox";
+import { TimeseriesSearch, SensorOverlay } from "@cognite/gearbox";
 import "./Layout.css";
 
 class Layout extends Component {
@@ -43,7 +43,7 @@ class Layout extends Component {
           </SensorOverlay>
         </div>
         <div className="right-side">
-          <TimeseriesSearchAndSelect
+          <TimeseriesSearch
             onTimeserieSelectionChange={this.onTimeserieSelectionChange}
           />
         </div>
