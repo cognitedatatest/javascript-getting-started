@@ -13,7 +13,7 @@ const PageContainer = styled.div`
   justify-content: left;
 `;
 
-const PageTree = styled.div`
+const PageAssets = styled.div`
   width: 40%;
 `;
 
@@ -85,9 +85,9 @@ class TimeseriesContainer extends React.Component {
 
     return (
       <PageContainer>
-        <PageTree>
+        <PageAssets>
           <AssetTree assets={assetsFetched} onSelect={this.handleAssetSelect} />
-        </PageTree>
+        </PageAssets>
         <PageSeries>
           <TimeseriesSearch
             onTimeserieSelectionChange={this.handleSeriesSelect}
