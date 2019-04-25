@@ -2,10 +2,12 @@
 
 This repository contains several examples of using [@cognite/gearbox](https://github.com/cognitedata/gearbox.js)
 
-| Application                                          | Components                                            |
-| ---------------------------------------------------- | ----------------------------------------------------- |
-| [Infographic App][infographic-app]                   | `SensorOverlay`, `TimeseriesSearch`, `TenantSelector` |
-| [Timeseries Connector App][timeseries-connector-app] | `AssetTree`, `TimeseriesSearch`, `TenantSelector`     |
+| Application                                          | Components                                                |
+| ---------------------------------------------------- | --------------------------------------------------------- |
+| [Infographic App][infographic-app]                   | `SensorOverlay`, `TimeseriesSearch`, `TenantSelector`     |
+| [Timeseries Connector App][timeseries-connector-app] | `AssetTree`, `TimeseriesSearch`, `TenantSelector`         |
+| [Asset Explorer App][timeseries-connector-app]       | `AssetSearch`, `AssetTree`, `AssetMeta`, `TenantSelector` |
 
 [infographic-app]: https://github.com/cognitedata/javascript-getting-started/tree/master/infographic-app
 [timeseries-connector-app]: https://github.com/cognitedata/javascript-getting-started/tree/master/timeseries-connector-app
+[asset-explorer-app]: https://github.com/cognitedata/javascript-getting-started/tree/master/asset-explorer-app
