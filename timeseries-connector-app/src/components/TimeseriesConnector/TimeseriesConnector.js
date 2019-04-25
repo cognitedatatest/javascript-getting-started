@@ -1,5 +1,6 @@
 import React from "react";
 import { TenantSelector } from "@cognite/gearbox";
+import * as sdk from "@cognite/sdk";
 import TimeseriesContainer from "../../containers/TimeseriesContainer/TimeseriesContainer";
 import styled from "styled-components";
 import "antd/dist/antd.css";
