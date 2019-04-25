@@ -22,7 +22,7 @@ class TimeseriesConnector extends React.Component {
     tenant: null
   };
 
-  handleTenantSelect = tenant => {
+  handleTenantSelect = async tenant => {
     if (sdk.Login.isPopupWindow()) {
       sdk.Login.popupHandler();
       return;
