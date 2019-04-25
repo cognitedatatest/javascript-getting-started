@@ -35,9 +35,7 @@ class AssetExplorer extends React.Component {
       errorRedirectUrl: window.location.href
     });
 
-    this.setState({
-      tenant
-    });
+    this.setState({ tenant });
   };
 
   render() {

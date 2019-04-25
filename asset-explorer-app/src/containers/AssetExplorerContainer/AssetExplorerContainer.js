@@ -50,18 +50,12 @@ class AssetExplorerContainer extends React.Component {
   }
 
   handleSearchAssetSelect = data => {
-    //User actions feedback info
-    console.log(`Asset checked: ${data.name}`);
-
     this.setState({
       assetCheckedId: data.id
     });
   };
 
   handleAssetSelect = data => {
-    //User actions feedback info
-    console.log(`Asset checked: ${data.title}`);
-
     this.setState({
       assetCheckedId: data.key
     });
