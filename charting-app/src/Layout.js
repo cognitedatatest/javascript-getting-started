@@ -19,7 +19,7 @@ class Layout extends Component {
     return (
       <div className="main-layout">
         <div className="left-side">
-          <TimeseriesChart timeseriesIds={timeserieIds} start={+Date.now() - 30*24*60*60*1000} end={+Date.now()} zoomable={true} contextChart={true}/>
+          <TimeseriesChart timeseriesIds={timeserieIds} start={+Date.now() - 30*24*60*60*1000} end={+Date.now()} zoomable={true} contextChart={true} panelHeight={700}/>
         </div>
         <div className="right-side">
           <TimeseriesSearch onTimeserieSelectionChange={this.onTimeserieSelectionChange} />

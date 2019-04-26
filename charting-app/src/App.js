@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ReactAuthProvider } from "@cognite/react-auth";
-import { TenantSelector } from "@cognite/gearbox";
+import { TenantSelector } from '@cognite/gearbox';
+import * as sdk from '@cognite/sdk';
 import 'antd/dist/antd.css';
 import Layout from "./Layout";
 
@@ -8,35 +8,34 @@ import Layout from "./Layout";
 class App extends Component {
   constructor() {
     super();
-    const route = window.location.pathname.replace("/", "");
     this.state = {
-      tenant: route || null
+      tenant: null
     };
   }
 
-  async componentDidMount() {
-    window.onpopstate = event => {
-      this.setState({ tenant: (event.state && event.state.tenant) || null });
+  componentDidMount() {
+    if(sdk.Login.isPopupWindow()) {
+      sdk.Login.popupHandler();
+      return;
     }
   }
 
-  onTenantSelected = tenant => {
+  onTenantSelected = async tenant => {
+    await sdk.Login.authorize({
+      popup: true,
+      project: tenant,
+      redirectUrl: window.location.href,
+      errorRedirectUrl: window.location.href,
+    });
+
     this.setState({ tenant });
-    window.history.pushState({ tenant }, "", `/${tenant}`);
   };
 
   render() {
     return (
       <div>
         {this.state.tenant ? (
-          <ReactAuthProvider
-            project={this.state.tenant}
-            redirectUrl={window.location.href}
-            errorRedirectUrl={window.location.href}
-            enableTokenCaching
-            >
               <Layout />
-            </ReactAuthProvider>
         ) : (
           <TenantSelector
             title="Charting App"

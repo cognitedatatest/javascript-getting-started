@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@cognite/gearbox": "^0.0.14",
-    "@cognite/react-auth": "^2.1.2",
     "@cognite/sdk": "^1.7.0",
     "antd": "^3.16.5",
     "react": "^16.8.6",
