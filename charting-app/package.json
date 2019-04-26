@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cognite/gearbox": "^0.0.14",
+    "@cognite/gearbox": "0.0.15",
     "@cognite/sdk": "^1.7.0",
     "antd": "^3.16.5",
     "react": "^16.8.6",

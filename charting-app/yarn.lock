@@ -811,10 +811,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cognite/gearbox@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@cognite/gearbox/-/gearbox-0.0.14.tgz#5c5ec26a4fccddc8872043590bd26ff0a0c949af"
-  integrity sha512-t99pMG8ZDaLDQHwxuyW1eMDag6z8QZkV0atl25PXglfcvINRgG9Rev06PIYH5IBguX2DcTNeRxMSeU8qxRg5+w==
+"@cognite/gearbox@0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@cognite/gearbox/-/gearbox-0.0.15.tgz#24e4a17abb2beca4b3faaf93bc9cf895d0885eaf"
+  integrity sha512-eteCy3O0IDnaxq93+p0pUadXtI5quIO8oYoLECPCMB1gbxTDEBS+KGast+Lc+NdV5mzB75ALTUh2rhJ5ZUXTLA==
   dependencies:
     "@cognite/griff-react" "^0.5.0-rc.33"
     d3 "^5.9.2"
