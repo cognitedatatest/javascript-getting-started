@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { TenantSelector } from '@cognite/gearbox';
 import * as sdk from '@cognite/sdk';
 import 'antd/dist/antd.css';
+import './App.css';
 import Layout from "./Layout";
 
 
@@ -33,15 +34,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="main-layout">
         {this.state.tenant ? (
               <Layout />
         ) : (
-          <TenantSelector
-            title="Charting App"
-            initialTenant="publicdata"
-            onTenantSelected={this.onTenantSelected}
-          />
+          <div className="tenant-selector-container">
+            <TenantSelector
+              title="Charting App"
+              initialTenant="publicdata"
+              onTenantSelected={this.onTenantSelected}
+            />
+          </div>
         )}
       </div>
     );

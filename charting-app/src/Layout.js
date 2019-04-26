@@ -17,14 +17,14 @@ class Layout extends Component {
   render() {
     const { timeserieIds } = this.state;
     return (
-      <div className="main-layout">
+      <React.Fragment>
         <div className="left-side">
           <TimeseriesChart timeseriesIds={timeserieIds} start={+Date.now() - 30*24*60*60*1000} end={+Date.now()} zoomable={true} contextChart={true} panelHeight={700}/>
         </div>
         <div className="right-side">
           <TimeseriesSearch onTimeserieSelectionChange={this.onTimeserieSelectionChange} />
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }

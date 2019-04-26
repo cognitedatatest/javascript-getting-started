@@ -1,12 +1,6 @@
-.main-layout {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-}
-
 .left-side {
-  flex-direction: column;
   flex: 3;
+  align-self: center;
 }
 
 .right-side {
