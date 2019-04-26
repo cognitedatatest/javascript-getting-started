@@ -23,11 +23,14 @@ class AssetExplorer extends React.Component {
     tenant: null
   };
 
-  handleTenantSelect = async tenant => {
+  componentDidMount() {
     if (sdk.Login.isPopupWindow()) {
       sdk.Login.popupHandler();
       return;
     }
+  }
+
+  handleTenantSelect = async tenant => {
     await sdk.Login.authorize({
       popup: true,
       project: tenant,
