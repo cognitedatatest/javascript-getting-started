@@ -7,12 +7,10 @@ import Layout from "./Layout";
 
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      tenant: null
-    };
-  }
+  
+  state = {
+    tenant: null
+  };
 
   componentDidMount() {
     if(sdk.Login.isPopupWindow()) {
