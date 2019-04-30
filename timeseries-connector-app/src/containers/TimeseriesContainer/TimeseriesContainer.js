@@ -50,9 +50,9 @@ class TimeseriesContainer extends React.Component {
     });
   };
 
-  handleSeriesSelect = ids => {
+  handleSeriesSelect = timeseriesChecked => {
     this.setState({
-      timeseriesChecked: ids
+      timeseriesChecked
     });
   };
 
