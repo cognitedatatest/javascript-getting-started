@@ -1,0 +1,9 @@
+.left-side {
+  flex: 3;
+  align-self: center;
+}
+
+.right-side {
+  flex-direction: column;
+  flex: 2;
+}
