@@ -23,11 +23,14 @@ class TimeseriesConnector extends React.Component {
     tenant: null
   };
 
-  handleTenantSelect = async tenant => {
+  componentDidMount() {
     if (sdk.Login.isPopupWindow()) {
       sdk.Login.popupHandler();
       return;
     }
+  }
+
+  handleTenantSelect = async tenant => {
     await sdk.Login.authorize({
       popup: true,
       project: tenant,
@@ -35,9 +38,7 @@ class TimeseriesConnector extends React.Component {
       errorRedirectUrl: window.location.href
     });
 
-    this.setState({
-      tenant
-    });
+    this.setState({ tenant });
   };
 
   render() {
