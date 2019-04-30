@@ -1,0 +1,13 @@
+.main-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+.tenant-selector-container {
+  max-width: 600px;
+  min-width: 400px;
+  align-self: center;
+}
