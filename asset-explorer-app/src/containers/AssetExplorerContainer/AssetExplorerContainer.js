@@ -1,7 +1,7 @@
-import React from "react";
-import { AssetSearch, AssetTree, AssetMeta } from "@cognite/gearbox";
-import * as sdk from "@cognite/sdk";
-import styled from "styled-components";
+import React from 'react';
+import { AssetSearch, AssetTree, AssetMeta } from '@cognite/gearbox';
+import * as sdk from '@cognite/sdk';
+import styled from 'styled-components';
 
 const PageContainer = styled.div`
   background-color: #00253a;
@@ -41,14 +41,6 @@ class AssetExplorerContainer extends React.Component {
     assetCheckedId: null
   };
 
-  async componentDidMount() {
-    const listAssets = await sdk.Assets.list();
-
-    this.setState({
-      assetsFetched: listAssets.items
-    });
-  }
-
   handleSearchAssetSelect = data => {
     this.setState({
       assetCheckedId: data.id
@@ -62,7 +54,7 @@ class AssetExplorerContainer extends React.Component {
   };
 
   render() {
-    const { assetsFetched, assetCheckedId } = this.state;
+    const { assetCheckedId } = this.state;
 
     return (
       <PageContainer>
@@ -71,7 +63,7 @@ class AssetExplorerContainer extends React.Component {
           <PageSearch>
             <AssetSearch onLiveSearchSelect={this.handleSearchAssetSelect} />
           </PageSearch>
-          <AssetTree assets={assetsFetched} onSelect={this.handleAssetSelect} />
+          <AssetTree onSelect={this.handleAssetSelect} />
         </PageAssets>
         <PageMeta>
           {assetCheckedId ? (
