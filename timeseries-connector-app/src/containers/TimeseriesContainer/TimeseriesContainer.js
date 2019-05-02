@@ -1,8 +1,8 @@
-import React from "react";
-import { AssetTree, TimeseriesSearch } from "@cognite/gearbox";
-import * as sdk from "@cognite/sdk";
-import styled from "styled-components";
-import { Button, message, notification } from "antd";
+import React from 'react';
+import { AssetTree, TimeseriesSearch } from '@cognite/gearbox';
+import * as sdk from '@cognite/sdk';
+import styled from 'styled-components';
+import { Button, message, notification } from 'antd';
 
 const ButtonGroup = Button.Group;
 
@@ -33,14 +33,6 @@ class TimeseriesContainer extends React.Component {
     timeseriesChecked: []
   };
 
-  async componentDidMount() {
-    const listAssets = await sdk.Assets.list();
-
-    this.setState({
-      assetsFetched: listAssets.items
-    });
-  }
-
   handleAssetSelect = data => {
     //User actions feedback info
     console.log(`Asset checked: ${data.title}`);
@@ -65,28 +57,27 @@ class TimeseriesContainer extends React.Component {
       await sdk.TimeSeries.updateMultiple(changes);
 
       //User actions feedback info
-      const seriesString = this.state.timeseriesChecked.join(", ");
+      const seriesString = this.state.timeseriesChecked.join(', ');
       notification.open({
-        message: "Successfully connected",
+        message: 'Successfully connected',
         description: `Asset: ${
           this.state.assetChecked
-        } was connected to TimeSeries: ${seriesString}`,
+        } was connected to Timeseries: ${seriesString}`,
         duration: 3
       });
     } else {
       //User actions feedback info
-      message.info("Nothing to connect");
+      message.info('Nothing to connect');
     }
   };
 
   render() {
-    const { assetsFetched } = this.state;
     const filterRule = timeseries => !timeseries.assetId;
 
     return (
       <PageContainer>
         <PageAssets>
-          <AssetTree assets={assetsFetched} onSelect={this.handleAssetSelect} />
+          <AssetTree onSelect={this.handleAssetSelect} />
         </PageAssets>
         <PageSeries>
           <TimeseriesSearch
@@ -96,7 +87,7 @@ class TimeseriesContainer extends React.Component {
         </PageSeries>
         <PageButtons>
           <ButtonGroup>
-            <Button type="primary" onClick={this.handleSeriesConnect}>
+            <Button type='primary' onClick={this.handleSeriesConnect}>
               Connect
             </Button>
           </ButtonGroup>
