@@ -1,9 +1,9 @@
-import React from "react";
-import { TenantSelector } from "@cognite/gearbox";
-import * as sdk from "@cognite/sdk";
-import TimeseriesContainer from "../../containers/TimeseriesContainer/TimeseriesContainer";
-import styled from "styled-components";
-import "antd/dist/antd.css";
+import React from 'react';
+import { TenantSelector } from '@cognite/gearbox';
+import * as sdk from '@cognite/sdk';
+import TimeseriesContainer from '../../containers/TimeseriesContainer/TimeseriesContainer';
+import styled from 'styled-components';
+import 'antd/dist/antd.css';
 
 const PageContainer = styled.div`
   width: 100vw;
@@ -50,8 +50,8 @@ class TimeseriesConnector extends React.Component {
           <TenantSelectorContainer>
             <TenantSelector
               onTenantSelected={this.handleTenantSelect}
-              initialTenant="itera-dev"
-              title="TimeseriesConnector"
+              initialTenant='itera-dev'
+              title='Timeseries Connector'
             />
           </TenantSelectorContainer>
         )}
