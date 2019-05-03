@@ -1,6 +1,5 @@
 import React from 'react';
 import { AssetSearch, AssetTree, AssetMeta } from '@cognite/gearbox';
-import * as sdk from '@cognite/sdk';
 import styled from 'styled-components';
 
 const PageContainer = styled.div`

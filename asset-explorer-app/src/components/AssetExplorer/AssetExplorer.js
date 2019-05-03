@@ -1,9 +1,9 @@
-import React from "react";
-import { TenantSelector } from "@cognite/gearbox";
-import * as sdk from "@cognite/sdk";
-import AssetExplorerContainer from "../../containers/AssetExplorerContainer/AssetExplorerContainer";
-import styled from "styled-components";
-import "antd/dist/antd.css";
+import React from 'react';
+import { TenantSelector } from '@cognite/gearbox';
+import { ReactAuthProvider } from '@cognite/react-auth';
+import AssetExplorerContainer from '../../containers/AssetExplorerContainer/AssetExplorerContainer';
+import styled from 'styled-components';
+import 'antd/dist/antd.css';
 
 const PageContainer = styled.div`
   width: 100vw;
@@ -23,38 +23,30 @@ class AssetExplorer extends React.Component {
     tenant: null
   };
 
-  componentDidMount() {
-    if (sdk.Login.isPopupWindow()) {
-      sdk.Login.popupHandler();
-      return;
-    }
-  }
-
   handleTenantSelect = async tenant => {
-    await sdk.Login.authorize({
-      popup: true,
-      project: tenant,
-      redirectUrl: window.location.href,
-      errorRedirectUrl: window.location.href
-    });
-
     this.setState({ tenant });
   };
 
   render() {
     return (
       <PageContainer>
-        {this.state.tenant ? (
+        <ReactAuthProvider
+          project={this.state.tenant}
+          redirectUrl={window.location.href}
+          errorRedirectUrl={window.location.href}
+          usePopup={true}
+          loginRenderer={
+            <TenantSelectorContainer>
+              <TenantSelector
+                onTenantSelected={this.handleTenantSelect}
+                initialTenant='itera-dev'
+                title='TimeseriesConnector'
+              />
+            </TenantSelectorContainer>
+          }
+        >
           <AssetExplorerContainer />
-        ) : (
-          <TenantSelectorContainer>
-            <TenantSelector
-              onTenantSelected={this.handleTenantSelect}
-              initialTenant="publicdata"
-              title="Asset Explorer"
-            />
-          </TenantSelectorContainer>
-        )}
+        </ReactAuthProvider>
       </PageContainer>
     );
   }
