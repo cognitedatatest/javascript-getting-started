@@ -39,8 +39,8 @@ class AssetExplorer extends React.Component {
             <TenantSelectorContainer>
               <TenantSelector
                 onTenantSelected={this.handleTenantSelect}
-                initialTenant='itera-dev'
-                title='TimeseriesConnector'
+                initialTenant='publicdata'
+                title='Asset Explorer'
               />
             </TenantSelectorContainer>
           }
