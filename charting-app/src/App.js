@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TenantSelector } from '@cognite/gearbox';
+import { ReactAuthProvider } from '@cognite/react-auth';
 import * as sdk from '@cognite/sdk';
 import 'antd/dist/antd.css';
 import './App.css';
@@ -33,17 +34,22 @@ class App extends Component {
   render() {
     return (
       <div className="main-layout">
-        {this.state.tenant ? (
-              <Layout />
-        ) : (
-          <div className="tenant-selector-container">
-            <TenantSelector
-              title="Charting App"
-              initialTenant="publicdata"
-              onTenantSelected={this.onTenantSelected}
-            />
-          </div>
-        )}
+        <ReactAuthProvider 
+          project={this.state.tenant}
+          redirectUrl={window.location.href}
+          errorRedirectUrl={window.location.href}
+          usePopup
+          loginRenderer={
+            <div className="tenant-selector-container">
+              <TenantSelector
+                title="Charting App"
+                initialTenant="publicdata"
+                onTenantSelected={tenant => this.setState({ tenant })}
+              />
+            </div>
+          }>
+          <Layout />
+        </ReactAuthProvider>
       </div>
     );
   }
