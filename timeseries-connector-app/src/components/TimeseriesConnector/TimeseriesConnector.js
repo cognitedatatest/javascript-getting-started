@@ -1,6 +1,6 @@
 import React from 'react';
 import { TenantSelector } from '@cognite/gearbox';
-import * as sdk from '@cognite/sdk';
+import { ReactAuthProvider } from '@cognite/react-auth';
 import TimeseriesContainer from '../../containers/TimeseriesContainer/TimeseriesContainer';
 import styled from 'styled-components';
 import 'antd/dist/antd.css';
@@ -23,38 +23,30 @@ class TimeseriesConnector extends React.Component {
     tenant: null
   };
 
-  componentDidMount() {
-    if (sdk.Login.isPopupWindow()) {
-      sdk.Login.popupHandler();
-      return;
-    }
-  }
-
   handleTenantSelect = async tenant => {
-    await sdk.Login.authorize({
-      popup: true,
-      project: tenant,
-      redirectUrl: window.location.href,
-      errorRedirectUrl: window.location.href
-    });
-
     this.setState({ tenant });
   };
 
   render() {
     return (
       <PageContainer>
-        {this.state.tenant ? (
+        <ReactAuthProvider
+          project={this.state.tenant}
+          redirectUrl={window.location.href}
+          errorRedirectUrl={window.location.href}
+          usePopup={true}
+          loginRenderer={
+            <TenantSelectorContainer>
+              <TenantSelector
+                onTenantSelected={this.handleTenantSelect}
+                initialTenant='itera-dev'
+                title='Timeseries Connector'
+              />
+            </TenantSelectorContainer>
+          }
+        >
           <TimeseriesContainer />
-        ) : (
-          <TenantSelectorContainer>
-            <TenantSelector
-              onTenantSelected={this.handleTenantSelect}
-              initialTenant='itera-dev'
-              title='Timeseries Connector'
-            />
-          </TenantSelectorContainer>
-        )}
+        </ReactAuthProvider>
       </PageContainer>
     );
   }
