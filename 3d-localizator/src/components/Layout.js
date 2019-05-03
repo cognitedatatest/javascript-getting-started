@@ -60,9 +60,7 @@ export class Layout extends React.Component {
     const { items: models } = await ThreeD.listModels();
     const { id: modelID } = models[1];
     const { items: revisions } = await ThreeD.listRevisions(modelID);
-	const { id: revisionID } = revisions[0];
-
-	debugger;
+	  const { id: revisionID } = revisions[0];
 
     this.setState({ asset, modelID, revisionID });
   };
