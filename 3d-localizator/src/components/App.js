@@ -39,6 +39,7 @@ class App extends React.Component {
 			loginRenderer={
 				<LoginWrapper>
 					<TenantSelector
+						header={'Type tenant name'}
 						title="3D Localizator"
 						initialTenant="publicdata"
 						onTenantSelected={this.onTenantSelected}

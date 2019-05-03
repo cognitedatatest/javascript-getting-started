@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, notification } from "antd";
 import React from "react";
 import styled from "styled-components";
 import { AssetSearch, AssetScanner, Model3DViewer } from "@cognite/gearbox";
@@ -58,9 +58,29 @@ export class Layout extends React.Component {
 
   async componentDidMount() {
     const { items: models } = await ThreeD.listModels();
+
+    if (!models.length) {
+      notification.error({
+        description: 'Your Tenant doesn\'t have any models',
+        message: 'Fail fetch models list'
+      });
+
+      return;
+    }
+
     const { id: modelID } = models[0];
     const { items: revisions } = await ThreeD.listRevisions(modelID);
-    const { id: revisionID } = revisions[0];
+
+    if (!revisions.length) {
+      notification.error({
+        description: 'Model has no revisions',
+        message: 'Fail fetch revisions list'
+      });
+
+      return;
+    }
+
+      const { id: revisionID } = revisions[0];
 
     this.setState({modelID, revisionID})
   }
