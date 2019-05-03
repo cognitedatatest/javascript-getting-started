@@ -39,7 +39,7 @@ class TimeseriesConnector extends React.Component {
             <TenantSelectorContainer>
               <TenantSelector
                 onTenantSelected={this.handleTenantSelect}
-                initialTenant='itera-dev'
+                initialTenant='publicdata'
                 title='Timeseries Connector'
               />
             </TenantSelectorContainer>
