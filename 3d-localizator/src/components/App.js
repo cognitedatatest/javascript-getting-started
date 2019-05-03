@@ -1,46 +1,53 @@
 import React from 'react';
+import styled from 'styled-components';
 import { TenantSelector } from '@cognite/gearbox';
-import * as sdk from '@cognite/sdk';
+import { ReactAuthProvider } from "@cognite/react-auth";
 import { Layout } from './Layout';
 
+const LoginWrapper = styled('div')`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 50px 0 0;
+	
+	> * {
+		width: 400px;
+	}
+`;
 
 class App extends React.Component {
 	constructor() {
 		super();
 
 		this.state = {
-			isAuthorized: false,
+			tenant: '',
 		}
 	}
 
 	onTenantSelected = async tenant => {
-		if (sdk.Login.isPopupWindow()) {
-			sdk.Login.popupHandler();
-			return;
-		}
-
-		await sdk.Login.authorize({
-			popup: true,
-			project: tenant,
-			redirectUrl: window.location.href,
-			errorRedirectUrl: window.location.href
-		});
-
-		this.setState({ isAuthorized: true });
+		this.setState({ tenant });
 	};
 
 	render() {
-		const { isAuthorized } = this.state;
+		const { tenant } = this.state;
 
-		return isAuthorized
-			? (<Layout />)
-			: (
-				<TenantSelector
-					title="3D Localizator"
-					initialTenant="publicdata"
-					onTenantSelected={this.onTenantSelected}
-				/>
-			)
+		return (<ReactAuthProvider
+			project={tenant}
+			redirectUrl={window.location.href}
+			errorRedirectUrl={window.location.href}
+			usePopup={true}
+			loginRenderer={
+				<LoginWrapper>
+					<TenantSelector
+						title="3D Localizator"
+						initialTenant="publicdata"
+						onTenantSelected={this.onTenantSelected}
+					/>
+				</LoginWrapper>
+			}
+		>
+			<Layout />
+		</ReactAuthProvider>)
 	}
 
 }

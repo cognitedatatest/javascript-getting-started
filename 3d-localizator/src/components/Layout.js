@@ -2,7 +2,7 @@ import { Button } from "antd";
 import React from "react";
 import styled from "styled-components";
 import { AssetSearch, AssetScanner, Model3DViewer } from "@cognite/gearbox";
-import { ThreeD, Assets } from "@cognite/sdk";
+import { ThreeD } from "@cognite/sdk";
 
 const Wrapper = styled("div")`
   display: flex;
@@ -44,6 +44,8 @@ const ActionsWrapper = styled("div")`
 `;
 
 export class Layout extends React.Component {
+  cache = {};
+
   constructor() {
     super();
 
@@ -51,21 +53,23 @@ export class Layout extends React.Component {
       asset: null,
       modelID: null,
       revisionID: null
-	};
+	  };
+  }
 
-	Assets.list().then(list => console.log(list));
+  async componentDidMount() {
+    const { items: models } = await ThreeD.listModels();
+    const { id: modelID } = models[0];
+    const { items: revisions } = await ThreeD.listRevisions(modelID);
+    const { id: revisionID } = revisions[0];
+
+    this.setState({modelID, revisionID})
   }
 
   onLiveSearchSelect = async asset => {
-    const { items: models } = await ThreeD.listModels();
-    const { id: modelID } = models[1];
-    const { items: revisions } = await ThreeD.listRevisions(modelID);
-	  const { id: revisionID } = revisions[0];
-
-    this.setState({ asset, modelID, revisionID });
+    this.setState({ asset });
   };
 
-  reset = () => this.setState({ asset: null, modelID: null, revisionID: null });
+  reset = () => this.setState({ asset: null });
 
   render() {
     const {
@@ -87,11 +91,12 @@ export class Layout extends React.Component {
           </ActionsWrapper>
         </Header>
         <Body>
-          {asset ? (
+          {asset && modelID && revisionID ? (
             <Model3DViewer
               modelId={modelID}
               revisionId={revisionID}
               assetId={asset.id}
+              cache={this.cache}
             />
           ) : (
             <AssetScanner />
