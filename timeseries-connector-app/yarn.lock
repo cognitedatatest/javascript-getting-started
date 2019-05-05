@@ -826,10 +826,10 @@
     react-sizeme "^2.5.2"
     uuid "^3.3.2"
 
-"@cognite/react-auth@^2.1.2":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@cognite/react-auth/-/react-auth-2.1.2.tgz#d6058a0ea19f3d0bf7ada128bde7e852744e0182"
-  integrity sha512-wZ79m8Z+4GAKrDOKEXb9dBYITdeShW5sD+4j31JNgmpHLFzWEVoyWBek2yexEDm4rydt37yY3DNtl+xy9GXq8Q==
+"@cognite/react-auth@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@cognite/react-auth/-/react-auth-2.2.0.tgz#177a5889272a77baa7d5ba8b7268885d8c37a933"
+  integrity sha512-9OeU+d3uoTkXs/vJnJ62C4HhvalWlVW67RZt0L2Bv9Vj7c5VtXI3idjTVTll7uHAJjLUHFi+45ZySCN+UWZDuw==
 
 "@cognite/sdk@^1.6.2":
   version "1.6.2"
