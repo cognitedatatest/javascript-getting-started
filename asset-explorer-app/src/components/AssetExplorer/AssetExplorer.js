@@ -1,7 +1,7 @@
 import React from 'react';
 import { TenantSelector } from '@cognite/gearbox';
 import { ReactAuthProvider } from '@cognite/react-auth';
-import TimeseriesContainer from '../../containers/TimeseriesContainer/TimeseriesContainer';
+import AssetExplorerContainer from '../../containers/AssetExplorerContainer/AssetExplorerContainer';
 import styled from 'styled-components';
 import 'antd/dist/antd.css';
 
@@ -18,7 +18,7 @@ const TenantSelectorContainer = styled.div`
   min-width: 400px;
 `;
 
-class TimeseriesConnector extends React.Component {
+class AssetExplorer extends React.Component {
   state = {
     tenant: null
   };
@@ -40,16 +40,16 @@ class TimeseriesConnector extends React.Component {
               <TenantSelector
                 onTenantSelected={this.handleTenantSelect}
                 initialTenant='publicdata'
-                title='Timeseries Connector'
+                title='Asset Explorer'
               />
             </TenantSelectorContainer>
           }
         >
-          <TimeseriesContainer />
+          <AssetExplorerContainer />
         </ReactAuthProvider>
       </PageContainer>
     );
   }
 }
 
-export default TimeseriesConnector;
+export default AssetExplorer;
