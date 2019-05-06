@@ -1,10 +1,10 @@
-import { Button, notification } from "antd";
-import React from "react";
-import styled from "styled-components";
-import { AssetSearch, AssetScanner, Model3DViewer } from "@cognite/gearbox";
-import { ThreeD } from "@cognite/sdk";
+import { Button, notification } from 'antd';
+import React from 'react';
+import styled from 'styled-components';
+import { AssetSearch, AssetScanner, Model3DViewer } from '@cognite/gearbox';
+import { ThreeD } from '@cognite/sdk';
 
-const Wrapper = styled("div")`
+const Wrapper = styled('div')`
   display: flex;
   position: fixed;
   width: 100%;
@@ -12,7 +12,7 @@ const Wrapper = styled("div")`
   flex-direction: column;
 `;
 
-const Header = styled("div")`
+const Header = styled('div')`
   display: flex;
   padding: 10px;
   background-color: blue;
@@ -20,7 +20,7 @@ const Header = styled("div")`
   z-index: 1;
 `;
 
-const Body = styled("div")`
+const Body = styled('div')`
   padding: 10px;
   position: relative;
   flex: 1;
@@ -33,12 +33,12 @@ const Body = styled("div")`
   }
 `;
 
-const SearchWrapper = styled("div")`
+const SearchWrapper = styled('div')`
   display: flex;
   flex: 1;
 `;
 
-const ActionsWrapper = styled("div")`
+const ActionsWrapper = styled('div')`
   flex: 0;
   margin-left: 5px;
 `;
@@ -52,8 +52,8 @@ export class Layout extends React.Component {
     this.state = {
       asset: null,
       modelID: null,
-      revisionID: null
-	  };
+      revisionID: null,
+    };
   }
 
   async componentDidMount() {
@@ -61,8 +61,8 @@ export class Layout extends React.Component {
 
     if (!models.length) {
       notification.error({
-        description: 'Your Tenant doesn\'t have any models',
-        message: 'Fail fetch models list'
+        description: "Your Tenant doesn't have any models",
+        message: 'Fail fetch models list',
       });
 
       return;
@@ -74,15 +74,15 @@ export class Layout extends React.Component {
     if (!revisions.length) {
       notification.error({
         description: 'Model has no revisions',
-        message: 'Fail fetch revisions list'
+        message: 'Fail fetch revisions list',
       });
 
       return;
     }
 
-      const { id: revisionID } = revisions[0];
+    const { id: revisionID } = revisions[0];
 
-    this.setState({modelID, revisionID})
+    this.setState({ modelID, revisionID });
   }
 
   onLiveSearchSelect = async asset => {
@@ -92,11 +92,7 @@ export class Layout extends React.Component {
   reset = () => this.setState({ asset: null });
 
   render() {
-    const {
-      asset,
-      modelID,
-      revisionID
-    } = this.state;
+    const { asset, modelID, revisionID } = this.state;
 
     return (
       <Wrapper>
