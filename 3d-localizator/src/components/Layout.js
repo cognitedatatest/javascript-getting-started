@@ -61,7 +61,7 @@ export class Layout extends React.Component {
 
     if (!models.length) {
       notification.error({
-        description: "Your Tenant doesn't have any models",
+        description: 'Your Tenant doesn\'t have any models',
         message: 'Fail fetch models list',
       });
 
