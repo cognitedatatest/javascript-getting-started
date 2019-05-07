@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "10"
+sudo: false
+install:
+  - yarn
+script:
+  - ./build.sh
+
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: apps
+    on:
+      branch: master
