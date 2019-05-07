@@ -1,9 +1,11 @@
 {
   "name": "timeseries-connector",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@cognite/gearbox": "^0.0.21",
+    "@cognite/griff-react": "0.4.2",
     "@cognite/react-auth": "^2.2.0",
     "@cognite/sdk": "^1.7.1",
     "antd": "^3.16.6",
