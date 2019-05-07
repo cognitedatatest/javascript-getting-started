@@ -1,6 +1,7 @@
 {
   "name": "min-app",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@cognite/gearbox": "^0.0.13",
