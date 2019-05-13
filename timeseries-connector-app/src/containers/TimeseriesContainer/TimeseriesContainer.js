@@ -4,8 +4,6 @@ import * as sdk from '@cognite/sdk';
 import styled from 'styled-components';
 import { Button, message, notification } from 'antd';
 
-const ButtonGroup = Button.Group;
-
 const PageContainer = styled.div`
   width: 90vw;
   height: 80vh;
@@ -28,7 +26,6 @@ const PageButtons = styled.div`
 
 class TimeseriesContainer extends React.Component {
   state = {
-    assetsFetched: [],
     assetChecked: null,
     timeseriesChecked: []
   };
@@ -86,11 +83,9 @@ class TimeseriesContainer extends React.Component {
           />
         </PageSeries>
         <PageButtons>
-          <ButtonGroup>
-            <Button type='primary' onClick={this.handleSeriesConnect}>
-              Connect
-            </Button>
-          </ButtonGroup>
+          <Button type='primary' onClick={this.handleSeriesConnect}>
+            Connect
+          </Button>
         </PageButtons>
       </PageContainer>
     );
