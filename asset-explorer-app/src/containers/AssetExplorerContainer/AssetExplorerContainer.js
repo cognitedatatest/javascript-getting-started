@@ -36,7 +36,6 @@ const PageMeta = styled.div`
 
 class AssetExplorerContainer extends React.Component {
   state = {
-    assetsFetched: [],
     assetCheckedId: null
   };
 
