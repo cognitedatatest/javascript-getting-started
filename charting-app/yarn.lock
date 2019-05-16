@@ -811,10 +811,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cognite/3d-viewer@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@cognite/3d-viewer/-/3d-viewer-4.1.1.tgz#0442ca62f6089c3e62306835d3e688473a6fbb8e"
-  integrity sha512-Boyd19dAA8Yawutrkl4QLFn00PSQqwKvveA8vIQOo4EpPaQ3kYaZMO/80JmBnQfMSTNHyHwAVuYZl2chift6cg==
+"@cognite/3d-viewer@4.1.3":
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/@cognite/3d-viewer/-/3d-viewer-4.1.3.tgz#3cf478f1d8ae3941eafe533470a46b30e79b6c1a"
+  integrity sha512-71ZilrhSxHc16hrh97ikAwzcR6oud63szNqO7vqMVJ/owfEGpbH4yC+jbLKVYM1kEko8xZuZ3wTsLRxwS5sQ7w==
   dependencies:
     "@cognite/three-combo-controls" "^1.2.5"
     "@tweenjs/tween.js" "^17.2.0"
@@ -829,10 +829,10 @@
     sleep-promise "^6.0.0"
     three "0.96.0"
 
-"@cognite/gearbox@0.0.21":
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/@cognite/gearbox/-/gearbox-0.0.21.tgz#7b4a4e3b00b6904d4147baeb18bf4d920392eacd"
-  integrity sha512-cRkKOtlKjt9MM3kMnXHsDzEQfhJEQ0UAD5ILFnc/Gkkmr4guHQ5r28s2y4GxLWyIaCpR6cRM3EZ/fQqHq97Z1A==
+"@cognite/gearbox@0.0.30":
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/@cognite/gearbox/-/gearbox-0.0.30.tgz#fcdf252fd373e167d5b2beb108d1d6ec82d2f5fa"
+  integrity sha512-tTm5HIYZsZFHayCyb/afY9d5Vtpi78Qi4MY3qtCnsTA044pnlU/bqLrDuT+FptqP5kVGubAHRaFCi2BCfyCtEQ==
   dependencies:
     d3 "^5.9.2"
     lodash "^4.17.11"
@@ -844,7 +844,7 @@
     react-sizeme "^2.5.2"
     uuid "^3.3.2"
   optionalDependencies:
-    "@cognite/3d-viewer" "^4.1.1"
+    "@cognite/3d-viewer" "4.1.3"
 
 "@cognite/griff-react@0.4.2":
   version "0.4.2"
@@ -864,15 +864,16 @@
   resolved "https://registry.yarnpkg.com/@cognite/react-auth/-/react-auth-2.2.0.tgz#177a5889272a77baa7d5ba8b7268885d8c37a933"
   integrity sha512-9OeU+d3uoTkXs/vJnJ62C4HhvalWlVW67RZt0L2Bv9Vj7c5VtXI3idjTVTll7uHAJjLUHFi+45ZySCN+UWZDuw==
 
-"@cognite/sdk@^1.7.2":
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/@cognite/sdk/-/sdk-1.7.2.tgz#6bed0835323d87209d0616ca36511ef618cad66d"
-  integrity sha512-tARTRJxFJQIalIIyxZR5fIvaOXbTgK4eq4JQvu8IG3nQzv9Dn2smk0fnzlGJaWHnROpuU9XlUKcgbf2OlTsphg==
+"@cognite/sdk@^1.7.3":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@cognite/sdk/-/sdk-1.7.3.tgz#f44f0a054342d694b1b374e5fcc0f42f9e900d5c"
+  integrity sha512-D2vIBUKHV7IYsFkZzVU35N/GK57z8e3LQAWEcz3y/ueUpN2t76R+ocLVRF39SQmq26x8Ii6rc9EoYk4B8Dbrgw==
   dependencies:
     axios "^0.18.0"
     jwt-decode "^2.2.0"
     query-string "^5.1.1"
     retry-axios "0.3.2"
+    url "^0.11.0"
 
 "@cognite/three-combo-controls@^1.2.5":
   version "1.2.9"
