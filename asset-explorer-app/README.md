@@ -1,4 +1,4 @@
-# Timeseries Connector App
+# Asset Explorer App
 
 This is example of using [@cognite/gearbox](https://github.com/cognitedata/gearbox.js) library.</br>
 The app demonstrates `AssetSearch`, `AssetTree` and `AssetMeta` components in conjunction with `TenantSelector`.</br>
