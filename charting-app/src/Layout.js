@@ -5,20 +5,20 @@ import "./Layout.css";
 class Layout extends Component {
   
   state = {
-    timeserieIds: []
+    timeseriesIds: []
   }
 
-  onTimeserieSelectionChange = timeserieIds => {
-    this.setState({ timeserieIds });
+  onTimeserieSelectionChange = timeseriesIds => {
+    this.setState({ timeseriesIds });
   }
 
   render() {
-    const { timeserieIds } = this.state;
+    const { timeseriesIds } = this.state;
     return (
       <React.Fragment>
         <div className="left-side">
           <TimeseriesChart
-            timeseriesIds={timeserieIds}
+            timeseriesIds={timeseriesIds}
             startTime={Date.now() - 30*24*60*60*1000}
             endTime={Date.now()}
             zoomable={true}
