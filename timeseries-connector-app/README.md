@@ -13,3 +13,7 @@ Install npm modules:
 Start application:
 
 `yarn start` or `HTTPS=true npm start` on macOS and `set HTTPS=true&&npm start` on Windows
+
+## Video guide
+
+[![Watch the video](https://img.youtube.com/vi/fiHp4kEsVcc/maxresdefault.jpg)](https://www.youtube.com/watch?v=fiHp4kEsVcc)
