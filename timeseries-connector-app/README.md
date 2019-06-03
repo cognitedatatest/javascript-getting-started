@@ -16,4 +16,5 @@ Start application:
 
 ## Video guide
 
+Click to play:
 [![Watch the video](https://img.youtube.com/vi/fiHp4kEsVcc/hqdefault.jpg)](https://www.youtube.com/watch?v=fiHp4kEsVcc)
