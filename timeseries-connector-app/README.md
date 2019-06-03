@@ -16,4 +16,4 @@ Start application:
 
 ## Video guide
 
-[![Watch the video](https://img.youtube.com/vi/fiHp4kEsVcc/maxresdefault.jpg)](https://www.youtube.com/watch?v=fiHp4kEsVcc)
+[![Watch the video](https://img.youtube.com/vi/fiHp4kEsVcc/hqdefault.jpg)](https://www.youtube.com/watch?v=fiHp4kEsVcc)
