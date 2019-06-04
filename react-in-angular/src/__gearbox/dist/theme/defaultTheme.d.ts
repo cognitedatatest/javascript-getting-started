@@ -1,0 +1,21 @@
+export declare const defaultTheme: {
+    primaryColor: string;
+    infoColor: string;
+    successColor: string;
+    processingColor: string;
+    errorColor: string;
+    highlightColor: string;
+    warningColor: string;
+    normalColor: string;
+    white: string;
+    black: string;
+    textColor: string;
+    textColorSecondary: string;
+    textColorInverse: string;
+    lightGrey: string;
+    lightShadow: string;
+    containerColor: string;
+    textColorDisabled: string;
+    buttonBorderColor: string;
+    buttonDisabledColor: string;
+};
