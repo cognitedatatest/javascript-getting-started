@@ -7,7 +7,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Few things have to be done before starting project locally:
 - run `yarn install`
 - replace content of `node_modules/@cognite/gearbox/dist` folder with content provided in `src/__gearbox/dist` folder
-- provide valid `project` and `apiKey` in `src/environments/environments.ts` file to use `@cognite/gearbox` components
 
 ## Development server
 

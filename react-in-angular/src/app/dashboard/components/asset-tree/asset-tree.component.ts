@@ -1,10 +1,10 @@
 import * as React from 'react';
 import ReactDOM  from 'react-dom';
+import * as sdk from '@cognite/sdk';
 import { AssetTree } from '@cognite/gearbox/dist/components/AssetTree';
 import { OnSelectAssetTreeParams } from '@cognite/gearbox/dist/interfaces';
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { SdkService } from '../sdk.service';
-import { AssetService } from '../asset.service';
+import { AssetService } from '../../services/asset.service';
 
 @Component({
   selector: 'app-asset-tree',
@@ -16,13 +16,12 @@ export class AssetTreeComponent implements OnInit {
 
   constructor(
     private elementRef: ElementRef<HTMLElement>,
-    private sdk: SdkService,
     private asset: AssetService
   ) { }
 
   ngOnInit() {
     ReactDOM.render(
-      React.createElement(AssetTree, {sdkInstance: this.sdk, onSelect: this.setAssetId}, null),
+      React.createElement(AssetTree, {sdkInstance: sdk, onSelect: this.setAssetId}, null),
       this.elementRef.nativeElement,
       () => { console.log('Render callback') }
     );

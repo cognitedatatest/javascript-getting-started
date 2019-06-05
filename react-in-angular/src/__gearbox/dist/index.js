@@ -14,6 +14,8 @@ var moment = _interopDefault(require('moment-timezone'));
 var Radio = _interopDefault(require('antd/lib/radio'));
 var griffReact = require('@cognite/griff-react');
 var Collapse = _interopDefault(require('antd/lib/collapse'));
+var rxjs = require('rxjs');
+var operators = require('rxjs/operators');
 var lodash = require('lodash');
 var uuid = require('uuid');
 var _3dViewer = require('@cognite/3d-viewer');
@@ -1616,6 +1618,32 @@ var AssetMeta = /** @class */ (function (_super) {
 }(React__default.Component));
 var EmptyPane = styled__default.span(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  color: #9b9b9b;\n"], ["\n  color: #9b9b9b;\n"])));
 var templateObject_1$8, templateObject_2$7;
+
+var withObservable = function (WrapperComponent) {
+    return /** @class */ (function (_super) {
+        __extends(WithObservable, _super);
+        function WithObservable(props) {
+            var _this = _super.call(this, props) || this;
+            _this.unmount$ = new rxjs.Subject();
+            var observable = props.observable;
+            _this.state = {};
+            observable
+                .pipe(operators.takeUntil(_this.unmount$))
+                .subscribe(function (passedProps) { return _this.setState(__assign({}, passedProps)); });
+            return _this;
+        }
+        WithObservable.prototype.render = function () {
+            return (React__default.createElement(React__default.Fragment, null, Object.keys(this.state).length ? (React__default.createElement(WrapperComponent, __assign({}, this.state))) : null));
+        };
+        WithObservable.prototype.componentWillUnmount = function () {
+            this.unmount$.next();
+            this.unmount$.complete();
+        };
+        return WithObservable;
+    }(React__default.Component));
+};
+
+var AssetMetaControlled = withObservable(AssetMeta);
 
 var NotificationTypes;
 (function (NotificationTypes) {
@@ -4478,6 +4506,7 @@ exports.AssetSearch = AssetSearch;
 exports.EventPreview = EventPreview;
 exports.Model3DViewer = Model3DViewer;
 exports.AssetMeta = AssetMeta;
+exports.AssetMetaControlled = AssetMetaControlled;
 exports.AssetTree = AssetTree;
 exports.DescriptionList = DescriptionList;
 exports.SensorOverlay = FinalSensorOverlay;

@@ -6,6 +6,8 @@ import moment from 'moment-timezone';
 import Radio from 'antd/lib/radio';
 import { AxisDisplayMode, DataProvider, AxisPlacement, LineChart } from '@cognite/griff-react';
 import Collapse$1 from 'antd/lib/collapse';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { debounce, omit, sortedIndex } from 'lodash';
 import { v4 } from 'uuid';
 import { THREE, Cognite3DViewer } from '@cognite/3d-viewer';
@@ -1608,6 +1610,32 @@ var AssetMeta = /** @class */ (function (_super) {
 }(React.Component));
 var EmptyPane = styled.span(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  color: #9b9b9b;\n"], ["\n  color: #9b9b9b;\n"])));
 var templateObject_1$8, templateObject_2$7;
+
+var withObservable = function (WrapperComponent) {
+    return /** @class */ (function (_super) {
+        __extends(WithObservable, _super);
+        function WithObservable(props) {
+            var _this = _super.call(this, props) || this;
+            _this.unmount$ = new Subject();
+            var observable = props.observable;
+            _this.state = {};
+            observable
+                .pipe(takeUntil(_this.unmount$))
+                .subscribe(function (passedProps) { return _this.setState(__assign({}, passedProps)); });
+            return _this;
+        }
+        WithObservable.prototype.render = function () {
+            return (React.createElement(React.Fragment, null, Object.keys(this.state).length ? (React.createElement(WrapperComponent, __assign({}, this.state))) : null));
+        };
+        WithObservable.prototype.componentWillUnmount = function () {
+            this.unmount$.next();
+            this.unmount$.complete();
+        };
+        return WithObservable;
+    }(React.Component));
+};
+
+var AssetMetaControlled = withObservable(AssetMeta);
 
 var NotificationTypes;
 (function (NotificationTypes) {
@@ -4465,4 +4493,4 @@ var ThemeProvider = function (props) {
     return (React.createElement(ThemeProvider$1, { theme: theme }, props.children));
 };
 
-export { AssetScanner, AssetSearch, EventPreview, Model3DViewer, AssetMeta, AssetTree, DescriptionList, FinalSensorOverlay as SensorOverlay, TenantSelector, TimeseriesChart, TimeseriesChartMeta, defaultStrings$6 as defaultStrings, TimeseriesSearch, ThemeProvider };
+export { AssetScanner, AssetSearch, EventPreview, Model3DViewer, AssetMeta, AssetMetaControlled, AssetTree, DescriptionList, FinalSensorOverlay as SensorOverlay, TenantSelector, TimeseriesChart, TimeseriesChartMeta, defaultStrings$6 as defaultStrings, TimeseriesSearch, ThemeProvider };

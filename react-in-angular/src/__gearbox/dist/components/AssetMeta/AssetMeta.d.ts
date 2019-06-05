@@ -12,7 +12,7 @@ export interface AssetMetaStyles {
     documents?: DocumentTableStyles;
     events?: AssetEventsPanelStyles;
 }
-interface AssetMetaProps {
+export interface AssetMetaProps {
     assetId: number;
     tab?: string;
     docsProps?: MetaDocProps;

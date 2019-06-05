@@ -3,11 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  cognite: {
-    project: 'publicdata',
-    apiKey: ''
-  }
+  production: false
 };
 
 /*
