@@ -4,7 +4,7 @@
   "homepage": ".",
   "private": true,
   "dependencies": {
-    "@cognite/gearbox": "^0.0.35",
+    "@cognite/gearbox": "^0.0.38",
     "@cognite/griff-react": "0.4.2",
     "@cognite/react-auth": "^2.2.0",
     "@cognite/sdk": "^1.7.6",
