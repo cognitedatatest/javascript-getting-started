@@ -7,7 +7,7 @@
     "@cognite/gearbox": "^0.0.35",
     "@cognite/griff-react": "^0.5.0-rc.44",
     "@cognite/react-auth": "^2.2.0",
-    "@cognite/sdk": "^1.7.0",
+    "@cognite/sdk": "1.7.6",
     "antd": "^3.16.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
