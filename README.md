@@ -8,7 +8,7 @@ This repository contains several examples of using [@cognite/gearbox](https://gi
 | [Timeseries Connector App][timeseries-connector-app], [demo][timeseries-connector-demo] | `AssetTree`, `TimeseriesSearch`, `TenantSelector`                | [![Watch the video](https://img.youtube.com/vi/fiHp4kEsVcc/1.jpg)](https://www.youtube.com/watch?v=fiHp4kEsVcc) |
 | [Charting App][charting-app], [demo][charting-demo]                                     | `TimeseriesChart`, `TimeseriesSearch`, `TenantSelector`          |                                                                                                                 |
 | [3D Localizator][3d-localizator], [demo][3d-localizator-demo]                           | `AssetSearch`, `AssetScanner`, `Model3DViewer`, `TenantSelector` |                                                                                                                 |
-| [Asset Explorer App][asset-explorer-app], [demo][asset-explorer-demo]                   | `AssetSearch`, `AssetTree`, `AssetMeta`, `TenantSelector`        |                                                                                                                 |
+| [Asset Explorer App][asset-explorer-app], [demo][asset-explorer-demo]                   | `AssetSearch`, `AssetTree`, `AssetMeta`, `TenantSelector`        | [![Watch the video](https://img.youtube.com/vi/bNCK1fGQde8/1.jpg)](https://www.youtube.com/watch?v=bNCK1fGQde8) |
 
 [infographic-app]: https://github.com/cognitedata/javascript-getting-started/tree/master/infographic-app
 [timeseries-connector-app]: https://github.com/cognitedata/javascript-getting-started/tree/master/timeseries-connector-app
