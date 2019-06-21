@@ -928,14 +928,14 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cognite/3d-viewer@^5.0.7":
-  version "5.0.8"
-  resolved "https://registry.yarnpkg.com/@cognite/3d-viewer/-/3d-viewer-5.0.8.tgz#90dd94d83ff4a62f79f26e0609c45ee0347c52c1"
-  integrity sha512-d41B1szK+MCzoTNUzisxys0Fq2IYXZRuLbEXujNUTgjDI0+pODxT60AMffEZTnY+F+p9IMBbhNzf41oo/5pKbw==
+"@cognite/3d-viewer@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@cognite/3d-viewer/-/3d-viewer-5.1.3.tgz#e893670064da24e82c10d74d80b8b81840f351f5"
+  integrity sha512-bydZZO+L+6IywAcmfieeL57zR4aml2YM8tcc7RmRyS0NYhQqO1flXvQZV21J5FWPfoZutgq6d9V4s5FIKfFJgg==
   dependencies:
     "@babel/runtime" "^7.4.4"
-    "@cognite/3d-web-parser" "^0.9.9"
-    "@cognite/three-combo-controls" "^1.4.0"
+    "@cognite/3d-web-parser" "^0.11.2"
+    "@cognite/three-combo-controls" "^1.4.1"
     "@tweenjs/tween.js" "^17.2.0"
     is-function "^1.0.1"
     mixpanel-browser "^2.27.1"
@@ -944,32 +944,31 @@
     right-now "^1.0.0"
     simple-statistics "^7.0.2"
     three "0.98.0"
-    tslint-config-prettier "^1.18.0"
-    tslint-plugin-prettier "^2.0.1"
 
-"@cognite/3d-web-parser@^0.9.9":
-  version "0.9.9"
-  resolved "https://registry.yarnpkg.com/@cognite/3d-web-parser/-/3d-web-parser-0.9.9.tgz#69314a010e299b8aa0b6d37c422033cdeaa2d785"
-  integrity sha512-iTKOxWYwa5JPfMMZmrkb4n5rNYAbNIgcqQRRZfT/7KruFOt5lTP2YE5mCdASxM6E6rxHwb01/PKIwFnrMW917A==
+"@cognite/3d-web-parser@^0.11.2":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@cognite/3d-web-parser/-/3d-web-parser-0.11.2.tgz#20a71b4ad12bee6eef5b89c5a259ef83c018bc14"
+  integrity sha512-od4sSH0FS4ExwjEzrvkpUsWWuaGZ+8fQfjuLzUtWiW62S+wY1wijgkurAUoIstcStP7GMgjgZvQn9U7KtOEOWA==
   dependencies:
     protobufjs "^6.8.8"
 
-"@cognite/gearbox@^0.0.35":
-  version "0.0.35"
-  resolved "https://registry.yarnpkg.com/@cognite/gearbox/-/gearbox-0.0.35.tgz#906c50e65ac817871958ff4bf2a8e36c4178bd69"
-  integrity sha512-t+P/iJ4VMP6dl4lJL8bYIRkmAy1OKWcxb1rs+V3BGAY5olskHb4Ldw6S4Y7eIqoV1m/r+znsy8l/UQ2YlY5SbA==
+"@cognite/gearbox@^0.0.42":
+  version "0.0.42"
+  resolved "https://registry.yarnpkg.com/@cognite/gearbox/-/gearbox-0.0.42.tgz#14d3562b14dc1f3f509638cdd4d868888607cc76"
+  integrity sha512-xaVy5I9e5hOsb78VSLZ4HPbFq+zkNHvHTP5PBaAQ7joHPXPd9/R7wISzJm4Gx7bKiw15k8JgPDzMntZFuhVpqw==
   dependencies:
     d3 "^5.9.2"
     lodash "^4.17.11"
     moment-timezone "^0.5.23"
     numeral "^2.0.6"
+    pinch-zoom-js "^2.3.4"
     react-dnd "^7.4.5"
     react-dnd-html5-backend "^7.4.4"
     react-odometerjs "^2.1.1"
     react-sizeme "^2.5.2"
     uuid "^3.3.2"
   optionalDependencies:
-    "@cognite/3d-viewer" "^5.0.7"
+    "@cognite/3d-viewer" "^5.1.3"
 
 "@cognite/griff-react@^0.5.0-rc.44":
   version "0.5.0-rc.44"
@@ -988,20 +987,20 @@
   resolved "https://registry.yarnpkg.com/@cognite/react-auth/-/react-auth-2.2.0.tgz#177a5889272a77baa7d5ba8b7268885d8c37a933"
   integrity sha512-9OeU+d3uoTkXs/vJnJ62C4HhvalWlVW67RZt0L2Bv9Vj7c5VtXI3idjTVTll7uHAJjLUHFi+45ZySCN+UWZDuw==
 
-"@cognite/sdk@1.7.6":
-  version "1.7.6"
-  resolved "https://registry.yarnpkg.com/@cognite/sdk/-/sdk-1.7.6.tgz#e87e90f3e0edb5abb2841464bb4b6f67014a1312"
-  integrity sha512-kETL1gRP7li7J8IAD7W3RgJvHpS2T2HgslanKg7QLPTVlGu/8Z2PnooLXK3r2MBUesDxL2glywrcy5Hwzxz+nA==
+"@cognite/sdk@^1.7.7":
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/@cognite/sdk/-/sdk-1.7.7.tgz#c85838459094f7a8e478e0e80b93db13f3bf4abd"
+  integrity sha512-SSJw+aperjrjLMGB1Cmm7I1zMWNhVOSJk652zA+DjPJBSZdrazpanoHRf8oYzEHBzJ2gmUd2jDutl3PdjK7dOg==
   dependencies:
     axios "0.18.1"
     jwt-decode "^2.2.0"
     query-string "^5.1.1"
     url "^0.11.0"
 
-"@cognite/three-combo-controls@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@cognite/three-combo-controls/-/three-combo-controls-1.4.0.tgz#6f32f5fc4ca2d272b06de591329d269b64df9b58"
-  integrity sha512-pKdcGSL2Xyaws0A9VMYbEZ5UWJPyfqDM+jiyYWLGy8YAQHnPRduiIuRfO+ekmR4G3knM4E3CfkjKe2ieZYRzeQ==
+"@cognite/three-combo-controls@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@cognite/three-combo-controls/-/three-combo-controls-1.4.1.tgz#1a00ccab1fd5d320b40b315e708e816d7e3ec2a0"
+  integrity sha512-8bqM8DkuUi/uQq1ydDBDrj/FXnjRLDxFggtQ6VlaichbyLIWiOhNuIR3BTeyVjynncFydnQ+/accjOzWebJN3A==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
@@ -4501,14 +4500,6 @@ eslint-plugin-jsx-a11y@6.2.1:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
-eslint-plugin-prettier@^2.2.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.7.0.tgz#b4312dcf2c1d965379d7f9d5b5f8aaadc6a45904"
-  integrity sha512-CStQYJgALoQBw3FsBzH0VOVDRnJ/ZimUlpLm226U8qgqYJfPOY/CPK6wyRInMxh73HSKg5wyRwdS4BVYYHwokA==
-  dependencies:
-    fast-diff "^1.1.1"
-    jest-docblock "^21.0.0"
-
 eslint-plugin-react-hooks@^1.5.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.6.0.tgz#348efcda8fb426399ac7b8609607c7b4025a6f5f"
@@ -4814,11 +4805,6 @@ fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
-
-fast-diff@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
-  integrity sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
 
 fast-glob@^2.0.2:
   version "2.2.6"
@@ -6264,11 +6250,6 @@ jest-diff@^24.7.0:
     jest-get-type "^24.3.0"
     pretty-format "^24.7.0"
 
-jest-docblock@^21.0.0:
-  version "21.2.0"
-  resolved "https://registry.yarnpkg.com/jest-docblock/-/jest-docblock-21.2.0.tgz#51529c3b30d5fd159da60c27ceedc195faf8d414"
-  integrity sha512-5IZ7sY9dBAYSV+YjQ0Ovb540Ku7AO9Z5o2Cg789xj167iQuZ2cG+z0f3Uct6WeYLbU6aQiM2pCs7sZ+4dotydw==
-
 jest-docblock@^24.3.0:
   version "24.3.0"
   resolved "https://registry.yarnpkg.com/jest-docblock/-/jest-docblock-24.3.0.tgz#b9c32dac70f72e4464520d2ba4aec02ab14db5dd"
@@ -6858,11 +6839,6 @@ levn@^0.3.0, levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
-
-lines-and-columns@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
-  integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
 load-json-file@^2.0.0:
   version "2.0.0"
@@ -8064,6 +8040,11 @@ pify@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
+
+pinch-zoom-js@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/pinch-zoom-js/-/pinch-zoom-js-2.3.4.tgz#b1019eb2af88b33a546cc7b67eaeb11f8a209e8c"
+  integrity sha512-w6aw3vsXtDEH0RZPtiSKFihhqKPbLvqtT7HvMOeZVDPqQ5M1RLfrF83dfpr8WdWUEyQSlH+8pTIsNskZwjorag==
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
@@ -10995,24 +10976,10 @@ ts-pnp@^1.0.0:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.2.tgz#be8e4bfce5d00f0f58e0666a82260c34a57af552"
   integrity sha512-f5Knjh7XCyRIzoC/z1Su1yLLRrPrFCgtUAh/9fCSP6NKbATwpOL1+idQVXQokK9GRFURn/jYPGPfegIctwunoA==
 
-tslib@^1.7.1, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
-
-tslint-config-prettier@^1.18.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.18.0.tgz#75f140bde947d35d8f0d238e0ebf809d64592c37"
-  integrity sha512-xPw9PgNPLG3iKRxmK7DWr+Ea/SzrvfHtjFt5LBl61gk2UBG/DB9kCXRjv+xyIU1rUtnayLeMUVJBcMX8Z17nDg==
-
-tslint-plugin-prettier@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/tslint-plugin-prettier/-/tslint-plugin-prettier-2.0.1.tgz#95b6a3b766622ffc44375825d7760225c50c3680"
-  integrity sha512-4FX9JIx/1rKHIPJNfMb+ooX1gPk5Vg3vNi7+dyFYpLO+O57F4g+b/fo1+W/G0SUOkBLHB/YKScxjX/P+7ZT/Tw==
-  dependencies:
-    eslint-plugin-prettier "^2.2.0"
-    lines-and-columns "^1.1.6"
-    tslib "^1.7.1"
 
 tsutils@^3.7.0:
   version "3.10.0"

@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { AssetSearch, AssetScanner, Model3DViewer } from '@cognite/gearbox';
 import { ThreeD } from '@cognite/sdk';
+import { THREE } from '@cognite/3d-viewer';
 
 const Wrapper = styled('div')`
   display: flex;
@@ -85,6 +86,61 @@ export class Layout extends React.Component {
     this.setState({ modelID, revisionID });
   }
 
+  onReady = async (viewer, model) => {
+    const { asset } = this.state;
+
+    if (!asset) return;
+
+    const nodes = await this.findNodes();
+
+    this.highlightNodes(viewer, model, nodes);
+  };
+
+  findNodes = async () => {
+    const { asset, modelID, revisionID } = this.state;
+
+    if (!asset) {
+      return;
+    }
+
+    const { items } = await ThreeD.listAssetMappings(modelID, revisionID, {
+      assetId: asset.id,
+    });
+
+    return items;
+  };
+
+  highlightNodes = (viewer, model, nodes) => {
+    const { length } = nodes;
+
+    if (!model || !viewer) {
+      return;
+    }
+
+    model.deselectAllNodes();
+
+    if (length === 1) {
+      const { nodeId } = nodes[0];
+
+      model.updateMatrixWorld();
+
+      const reusableBox = new THREE.Box3();
+
+      const bb = model.getBoundingBox(nodeId, reusableBox);
+
+      model.selectNode(nodeId);
+
+      if (!bb.isEmpty()) {
+        viewer.fitCameraToBoundingBox(bb);
+      }
+    } else {
+      nodes.forEach((node) =>
+        // @ts-ignore
+        model.selectNode(node.nodeId)
+      );
+    }
+  };
+
   onLiveSearchSelect = async asset => {
     this.setState({ asset });
   };
@@ -113,6 +169,7 @@ export class Layout extends React.Component {
               revisionId={revisionID}
               assetId={asset.id}
               cache={this.cache}
+              onReady={this.onReady}
             />
           ) : (
             <AssetScanner />
