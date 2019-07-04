@@ -18,4 +18,4 @@ Start application:
 
 Click to play:
 <br>
-[![Watch the video](https://img.youtube.com/vi/bNCK1fGQde8/hqdefault.jpg)](https://www.youtube.com/watch?v=bNCK1fGQde8)
+[![Watch the video](https://img.youtube.com/vi/gL0o2318BHc/hqdefault.jpg)](https://www.youtube.com/watch?v=gL0o2318BHc)
