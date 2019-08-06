@@ -1,6 +1,17 @@
-# Cognite Gearbox Examples
+## First steps into [Cognite Data Fusion](https://cognite.com/products/cognite-data-fusion/) using JavaScript 
 
-This repository contains several examples of using [@cognite/gearbox](https://github.com/cognitedata/gearbox.js)
+### Cognite JavaScript SDK examples
+These guides will help you to start working with [@cognite/cognitesdk-js](https://github.com/cognitedata/cognitesdk-js)
+
+| Name                                                                             | Description                                                       | Video guide                                                                                                     |
+| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| [Install and fetch data][sdk-intro] | An example of a React app which uses SDK to connect to CDF and fetch data| Coming soon
+
+[sdk-intro]: https://github.com/cognitedata/javascript-getting-started/tree/master/sdk-auth-and-fetch-data
+
+### Cognite Gearbox Examples
+
+This is a list of examples for [@cognite/gearbox](https://github.com/cognitedata/gearbox.js)
 
 | Application                                                                             | Components                                                       | Video guide                                                                                                     |
 | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
