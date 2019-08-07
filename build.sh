@@ -12,7 +12,7 @@ for app in "${applications[@]}"
 do
   echo $app
   rm -rf apps/$app
-  mkdir apps/$app
+  mkdir -p apps/$app
   cd $app
   yarn
   yarn build
