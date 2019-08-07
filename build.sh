@@ -1,6 +1,9 @@
 #!/bin/bash
 
 set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 export NODE_OPTIONS=--max_old_space_size=4096
 rm -rf apps
 mkdir apps
@@ -12,12 +15,12 @@ for app in "${applications[@]}"
 do
   echo $app
   rm -rf apps/$app
-  mkdir apps/$app
+  mkdir -p apps/$app
   cd $app
   yarn
   yarn build
-  cp -a ./build/. ../apps/$app
-  cd ..
+  cp -a ./build/. $DIR/apps/$app/
+  cd $DIR
 done
 
 jsArray=[\"$( IFS=, ; echo "${applications[*]}" )\"]
