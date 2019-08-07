@@ -26,4 +26,4 @@ done
 jsArray=[\"$( IFS=, ; echo "${applications[*]}" )\"]
 jsArray="${jsArray//,/\",\"}"
 jsArray="${jsArray//.\/}"
-sed -i "s/@AppsToken/$jsArray/g" apps/index.html
+sed -r -i "s~@AppsToken~$jsArray~g" apps/index.html
