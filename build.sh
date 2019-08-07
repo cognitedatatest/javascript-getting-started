@@ -6,7 +6,7 @@ rm -rf apps
 mkdir apps
 cp index.html apps/index.html
 
-applications=(`find . -maxdepth 2 -mindepth 2 -type f -iname 'package.json' -printf '%h\n'`)
+applications=(`find . -maxdepth 3 -mindepth 2 -type f -iname 'package.json' -printf '%h\n'`)
 
 for app in "${applications[@]}"
 do
